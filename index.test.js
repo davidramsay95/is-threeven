@@ -40,10 +40,12 @@ test('returns false for non-integers', () => {
   assert.equal(isThreeven(3.5), false);
 });
 
-test('returns false for NaN and Infinity', () => {
-  assert.equal(isThreeven(NaN), false);
-  assert.equal(isThreeven(Infinity), false);
-  assert.equal(isThreeven(-Infinity), false);
+test('throws a TypeError for NaN, Infinity and non-number inputs', () => {
+  assert.throws(() => isThreeven(NaN), TypeError);
+  assert.throws(() => isThreeven(Infinity), TypeError);
+  assert.throws(() => isThreeven(-Infinity), TypeError);
+  assert.throws(() => isThreeven('3'), TypeError);
+  assert.throws(() => isThreeven(Number.MAX_SAFE_INTEGER + 1), TypeError);
 });
 
 test('is the exact inverse of is-throdd', () => {
