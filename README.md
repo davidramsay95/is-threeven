@@ -12,8 +12,10 @@ npm install is-threeven
 
 ## Usage
 
+This package is ESM only.
+
 ```js
-const isThreeven = require('is-threeven');
+import isThreeven from 'is-threeven';
 
 isThreeven(3); // true
 isThreeven(6); // true
