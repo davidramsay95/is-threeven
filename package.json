@@ -1,0 +1,38 @@
+{
+  "name": "is-threeven",
+  "version": "1.0.0",
+  "description": "Returns true if input number is 'threeven'.",
+  "keywords": [
+    "threeven",
+    "is-threeven",
+    "number",
+    "modulo",
+    "divisible",
+    "divisibility",
+    "three",
+    "check",
+    "predicate",
+    "utility"
+  ],
+  "homepage": "https://github.com/davidramsay95/is-threeven#readme",
+  "bugs": {
+    "url": "https://github.com/davidramsay95/is-threeven/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidramsay95/is-threeven.git"
+  },
+  "files": [
+    "index.js"
+  ],
+  "license": "MIT",
+  "author": "David Ramsay",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --test"
+  },
+  "dependencies": {
+    "is-throdd": "^1.0.0"
+  }
+}
