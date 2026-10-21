@@ -28,26 +28,28 @@ isThreeven(4); // false
 
 `isThreeven(value)` returns `!isThrodd(value)`, which is `value % 3 === 0`. Zero is divisible by 3, so `isThreeven(0)` returns `true`.
 
-Because the check is delegated to `is-throdd`, inputs follow JavaScript `%` semantics:
+Because the check is delegated to `is-throdd`, input validation is inherited. A `TypeError` is thrown if `value` is not a primitive number, is `NaN`, `Infinity` or `-Infinity`, or is outside the safe integer range.
+
+Otherwise the result follows JavaScript `%` semantics:
 
 - Non-integers such as `1.5` return `false`.
-- `NaN`, `Infinity` and `-Infinity` return `false`.
 - Negative multiples of 3 return `true`.
 
 ## Development
 
 Tests use the built-in Node.js test runner.
 
-`is-throdd` must be resolvable from `node_modules`. Once it is published, `npm install` is enough. Until then, link the local sibling checkout without modifying `package.json`:
+`is-throdd` must be resolvable from `node_modules`, and it in turn needs `is-safe-number`. Once both are published, `npm install` is enough. Until then, link the local sibling checkouts without modifying `package.json`:
 
 ```sh
+(cd ../is-throdd && npm install --no-save --no-package-lock ../is-safe-number)
 npm install --no-save --no-package-lock ../is-throdd
 npm test
 ```
 
 ## Publishing
 
-Publish `is-throdd` first. `is-threeven` declares it as a dependency (`^1.0.0`), so installing `is-threeven` fails until `is-throdd` exists on the registry.
+Publish `is-safe-number` and `is-throdd` first, in that order. `is-threeven` declares it as a dependency (`^1.0.0`), so installing `is-threeven` fails until `is-throdd` exists on the registry.
 
 Only `index.js`, `package.json`, `README.md` and `LICENSE` are included in the package tarball. Verify with:
 
