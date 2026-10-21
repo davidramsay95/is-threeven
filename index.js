@@ -1,7 +1,5 @@
-'use strict';
-
-const isThrodd = require('is-throdd');
+import isThrodd from 'is-throdd';
 
 const isThreeven = (value) => !isThrodd(value);
 
-module.exports = isThreeven;
+export default isThreeven;

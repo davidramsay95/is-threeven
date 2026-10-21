@@ -1,9 +1,9 @@
 'use strict';
 
-const { test } = require('node:test');
-const assert = require('node:assert/strict');
-const isThrodd = require('is-throdd');
-const isThreeven = require('./index.js');
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import isThrodd from 'is-throdd';
+import isThreeven from './index.js';
 
 test('exports a function', () => {
   assert.equal(typeof isThreeven, 'function');

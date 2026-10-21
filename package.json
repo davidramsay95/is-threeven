@@ -27,7 +27,7 @@
   ],
   "license": "MIT",
   "author": "David Ramsay",
-  "type": "commonjs",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "node --test"
